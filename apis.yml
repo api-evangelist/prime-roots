@@ -1,8 +1,16 @@
 aid: prime-roots
 name: Prime Roots
-description: 'Prime Roots is a company surfaced as a portfolio company of prosus-ventures and added to
-  the API Evangelist network as a stub for enrichment. Sector: foodtech. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Prime Roots is a Berkeley, California foodtech company making koji- and
+  plant-based deli meats and bacon marketed as "the clean deli meat" — no
+  preservatives, nitrates, or celery salt. It sells direct-to-consumer and
+  through foodservice, running its online store on Shopify. That storefront
+  exposes a native agent-commerce surface: an llms.txt / agents.md agent guide,
+  a Universal Commerce Protocol (UCP, https://ucp.dev) discovery document at
+  /.well-known/ucp, and a hosted MCP endpoint at /api/ucp/mcp for agent-driven
+  catalog search, cart, and buyer-approved checkout. Added to the API Evangelist
+  network as a Prosus Ventures portfolio company and enriched from its live
+  public discovery surfaces.
 url: https://raw.githubusercontent.com/api-evangelist/prime-roots/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +18,47 @@ x-backed-by:
 - prosus-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://www.primeroots.com/cdn/shop/files/logo.png
 tags:
 - Company
 - Foodtech
-apis: []
+- Plant-Based
+- Deli Meat
+- Food Service
+- Agentic Commerce
+- Universal Commerce Protocol
+- MCP
+- Shopify
+- Ecommerce
+apis:
+- name: Prime Roots Storefront (Agentic Commerce)
+  description: >-
+    The Prime Roots Shopify storefront's agent-facing commerce surface: a UCP
+    merchant profile, a hosted MCP endpoint for catalog/cart/checkout, and
+    read-only storefront JSON endpoints.
+  humanURL: https://www.primeroots.com/llms.txt
+  baseURL: https://www.primeroots.com
+  properties:
+  - type: LLMsTxt
+    url: llms/prime-roots-llms.txt
+  - type: MCPServer
+    url: mcp/prime-roots-mcp.yml
+  - type: WellKnown
+    url: well-known/prime-roots-well-known.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +67,22 @@ maintainers:
 common:
 - type: Website
   url: https://primeroots.com
+- type: Blog
+  url: https://www.primeroots.com/blogs/all
+- type: PrivacyPolicy
+  url: https://www.primeroots.com/policies/privacy-policy
+- type: TermsOfService
+  url: https://www.primeroots.com/policies/terms-of-service
+- type: LLMsTxt
+  url: llms/prime-roots-llms.txt
+- type: MCPServer
+  url: mcp/prime-roots-mcp.yml
+- type: WellKnown
+  url: well-known/prime-roots-well-known.yml
+- type: DomainSecurity
+  url: security/prime-roots-domain-security.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 7
+  pass: local-v1

@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: probed
+description: >-
+  Results of probing the /.well-known/ discovery surface for the Prime Roots
+  base host (https://www.primeroots.com). Status is the HTTP code observed at
+  fetch time (paths on the apex primeroots.com 301-redirect to the www host).
+  Only documents that returned a real, correctly-typed payload were saved
+  verbatim. Prime Roots runs on Shopify, so the OpenID/OAuth documents describe
+  Shopify's hosted customer-authentication issuer, and the UCP document is the
+  store's Universal Commerce Protocol merchant profile.
+hosts:
+  - host: https://www.primeroots.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 200
+        type: application/json
+        file: prime-roots-openid-configuration.json
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        type: application/json
+        file: prime-roots-oauth-authorization-server.json
+      - path: /.well-known/ucp
+        status: 200
+        type: application/json
+        file: prime-roots-ucp.json
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404

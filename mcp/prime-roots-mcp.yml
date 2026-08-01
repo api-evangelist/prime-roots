@@ -1,0 +1,45 @@
+generated: '2026-07-20'
+method: searched
+status: hosted
+source: https://www.primeroots.com/llms.txt + https://www.primeroots.com/.well-known/ucp
+description: >-
+  Prime Roots operates a hosted, remote MCP endpoint as part of its Shopify
+  storefront implementation of the Universal Commerce Protocol (UCP,
+  https://ucp.dev). Agents POST JSON-RPC to the endpoint and call the MCP
+  tools/list method to discover tool schemas at runtime. Checkout requires
+  contemporaneous human buyer approval; agents must not complete payment
+  without explicit consent. The endpoint is rate-limited per IP (back off on
+  429). Tool names below are taken verbatim from the documented agent flow in
+  llms.txt; the authoritative, versioned schema is served by tools/list and by
+  the UCP OpenRPC schema referenced from the discovery document.
+server:
+  name: prime-roots-ucp
+  transport: http
+  protocol: mcp
+  url: https://www.primeroots.com/api/ucp/mcp
+  method: POST
+  content_type: application/json
+  discovery: https://www.primeroots.com/.well-known/ucp
+  ucp_versions:
+    - '2026-04-08'
+    - '2026-01-23'
+  openrpc_schema: https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json
+  human_approval_required: true
+  rate_limited: true
+tools:
+  - name: search_catalog
+    description: Find products matching the buyer's intent (UCP dev.ucp.shopping.catalog.search).
+  - name: create_cart
+    description: Create a cart and add desired items (UCP dev.ucp.shopping.cart).
+  - name: create_checkout
+    description: Start the purchase flow (UCP dev.ucp.shopping.checkout).
+  - name: update_checkout
+    description: Set shipping address and fulfillment method (UCP dev.ucp.shopping.fulfillment).
+  - name: complete_checkout
+    description: Finalize the order; buyer must approve payment (UCP dev.ucp.shopping.order).
+alternative_access:
+  shop_skill: https://shop.app/SKILL.md
+  read_only_storefront:
+    - GET /products/{handle}.json
+    - GET /collections/{handle}/products.json
+    - GET /search?q={query}&type=product
