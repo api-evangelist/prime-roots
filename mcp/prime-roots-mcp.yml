@@ -1,6 +1,7 @@
 generated: '2026-07-20'
 method: searched
-status: hosted
+status: published
+status_raw: hosted
 source: https://www.primeroots.com/llms.txt + https://www.primeroots.com/.well-known/ucp
 description: >-
   Prime Roots operates a hosted, remote MCP endpoint as part of its Shopify
