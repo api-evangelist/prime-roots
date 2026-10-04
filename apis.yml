@@ -73,7 +73,6 @@ apis:
     merchant profile, a hosted MCP endpoint for catalog/cart/checkout, and
     read-only storefront JSON endpoints.
   humanURL: https://www.primeroots.com/llms.txt
-  baseURL: https://www.primeroots.com
   properties:
   - type: LLMsTxt
     url: llms/prime-roots-llms.txt
@@ -81,6 +80,9 @@ apis:
     url: mcp/prime-roots-mcp.yml
   - type: WellKnown
     url: well-known/prime-roots-well-known.yml
+  x-surface: platform-generated
+  x-platform: shopify
+  x-platform-surface: ucp
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
