@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/prime-roots/integrations
+- https://n8n.io/integrations/prime-roots/
+- https://composio.dev/toolkits/prime-roots
+- https://monid.ai/tools/prime-roots
+checked:
+- https://composio.dev/toolkits/prime-roots
+- https://monid.ai/tools/prime-roots
+- https://n8n.io/integrations/prime-roots/
+- https://zapier.com/apps/prime-roots/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
